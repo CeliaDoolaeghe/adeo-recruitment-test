@@ -47,6 +47,14 @@ Download the application. In the root folder, in a terminal:
 
 You can filter the data to keep only countries with people with animals whose name contains a certain substring.
 
-For example, the following command will keep only countries with people with animals with "ry" in their names.
+For example, the following command line will keep only countries with people with animals with "ry" in their names:
 
 `$ node app.js --filter=ry`
+
+## Count
+
+You can count all animals for each person and all people for each country. The number will be displayed in the owner's name.
+
+Use this command line:
+
+`$ node app.js --count`
