@@ -1,7 +1,8 @@
-const filterAnimals = (animals, matcher) => animals.filter(animal => animal.name.includes(matcher));
+const filterAnimals = (animals, matcher) =>
+  animals.filter(animal => animal.name.includes(matcher));
 
-const filterPeople = (people, matcher) => {
-  return people.reduce((matchingPeople, currentPerson) => {
+const filterPeople = (people, matcher) =>
+  people.reduce((matchingPeople, currentPerson) => {
     const matchingAnimals = filterAnimals(currentPerson.animals, matcher);
     if (matchingAnimals.length > 0) {
       return [
@@ -15,10 +16,9 @@ const filterPeople = (people, matcher) => {
       return matchingPeople;
     }
   }, []);
-};
 
-const filterCountries = (countries, matcher) => {
-  return countries.reduce((matchingCountries, currentCountry) => {
+const filterCountries = (countries, matcher) =>
+  countries.reduce((matchingCountries, currentCountry) => {
     const matchingPeople = filterPeople(currentCountry.people, matcher);
     if (matchingPeople.length > 0) {
       return [
@@ -32,7 +32,6 @@ const filterCountries = (countries, matcher) => {
       return matchingCountries;
     }
   }, []);
-};
 
 module.exports = {
   filterCountries,
